@@ -1,10 +1,14 @@
+import axios from 'axios';
+
 import logo from './logo.svg';
 import './App.css';
 
-import axios from 'axios'
-
 function App() {
-  const 
+  const handleSave = () => {
+    axios.post('/api/url', { some: 'data' }).then((response) => {
+      console.log(response);
+    })
+  }
 
   return (
     <div className="App">
@@ -14,6 +18,7 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
+          onClick={handleSave}
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
